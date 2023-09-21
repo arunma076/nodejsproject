@@ -1,4 +1,4 @@
-## Setting up Jenkins, Ansible, and Docker Environment
+## Setting up Dockerized Node.js Application Deployment with Jenkins and Ansible
 
 ## Introduction
 
