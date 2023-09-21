@@ -1,0 +1,26 @@
+- name : build and run container
+  hosts: docker
+  become: yes
+  become_user: doc_user
+
+  tasks:
+    - name: stop running container
+      command: docker stop nodejsapp
+      ignore_errors: yes
+
+    - name: delete the container
+      command: docker rm nodejsapp
+      ignore_errors: yes
+
+
+    - name: delete the image
+      command: docker rmi arundevops075/nodejsapp:latest
+      ignore_errors: yes
+
+    - name: build the image
+      command: docker pull arundevops075/nodejsapp:latest
+     
+
+    - name: run the container
+      command: docker run --name nodejsapp -d -p 3000:3000 arundevops075/nodejsapp:latest
+

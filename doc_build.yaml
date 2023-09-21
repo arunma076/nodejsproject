@@ -1,0 +1,20 @@
+
+- name: build and push to docker hub
+  hosts: localhost
+  become: yes
+  become_user: ans_user
+
+  tasks:
+    - name: build the image
+      command: docker build -t nodejsapp .
+      args:
+        chdir: /home/ans_user/nodejs_project
+
+    - name: tag the image
+      command: docker tag nodejsapp arundevops075/nodejsapp:latest
+     
+    - name: docker push
+      command: docker push arundevops075/nodejsapp:latest
+
+    - name: remove the build image and tagged one
+      command: docker rmi nodejsapp arundevops075/nodejsapp:latest      
