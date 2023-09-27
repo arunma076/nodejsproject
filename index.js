@@ -23,7 +23,7 @@ let users = [{
 ];
 // Route to get all users
 
-app.get('/users', (req, res) => {
+app.get('/', (req, res) => {
     res.json(users);
 });
 // Route to get a specific user by ID
