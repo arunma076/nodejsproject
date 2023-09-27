@@ -14,6 +14,12 @@ let users = [{
         name: 'Jane Smith',
         age: 25
     },
+    {
+        id: 3,
+        name: 'Jon SNow',
+        age: 25
+    },
+
 ];
 // Route to get all users
 
